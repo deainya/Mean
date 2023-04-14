@@ -20,14 +20,13 @@ app.use(express.urlencoded({ extended: true }));
 //app.use(express.json());
 
 //main route
-app.post('/', (req, res) => {
-  res.send(`Body of req ${req.body}`);
-  console.log(req.body)
+app.get('/', (req, res) => {
+  res.send('Main route is ok');
 });
 
 //test route
 app.get('/test', (req, res) => {
-  res.send('This is Hello World for Test App!');
+  res.send('This is Hello World for Test!');
 });
 
 //alternative
