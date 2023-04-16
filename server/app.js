@@ -10,14 +10,13 @@ const dist = config.dist;
 
 // default app route
 app.use(express.static(__dirname + dist));
-//html post
 app.use(express.urlencoded({ extended: true }));
+//json
+//app.use(express.json());
 
 //view engine
 //app.engine('html', require('ejs').renderFile);
 //app.set('view engine', 'html');
-//json
-//app.use(express.json());
 
 //main route
 app.get('/', (req, res) => {
