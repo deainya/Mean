@@ -8,17 +8,17 @@ exports.index = function (req, res) {
 exports.create = function (req, res) {
   var newTest = new Test(req.body);
   console.log(req.body);
-  newTest.save(function (err) {
-    if(err) {
+  newTest.save(async (res, err) => {
+    if (err) {
       res.status(400).send('Unable to save record to database');
     } else {
-      res.redirect('/test/testget'); //WTF??? - test.html?
+      res.redirect('/test/testget');
     }
   });
 };
 
 exports.list = function (req, res) {
-  Test.find({}).exec(function (err, tests) {
+  Test.find({}).exec(async (err, tests) => {
     if (err) {
       return res.send(500, err);
     }
