@@ -19,7 +19,7 @@ exports.create = async (req, res) => {
 exports.list = async (req, res) => {
   try {
     const tests = await Test.find({}).exec()
-    console.log(tests);
+    //console.log(tests); //trace data from mongoose
     await res.render('testget', {
       tests: tests
     });
