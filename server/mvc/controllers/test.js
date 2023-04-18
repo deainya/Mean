@@ -5,10 +5,10 @@ exports.index = function (req, res) {
   res.sendFile(path.resolve('server/mvc/views/test.html'));
 };
 
-exports.create = function (req, res) {
+exports.create = async (req, res) => {
   var newTest = new Test(req.body);
   console.log(req.body);
-  newTest.save(async (res, err) => {
+  newTest.save(await (res, err) => {
     if (err) {
       res.status(400).send('Unable to save record to database');
     } else {
@@ -17,8 +17,8 @@ exports.create = function (req, res) {
   });
 };
 
-exports.list = function (req, res) {
-  Test.find({}).exec(async (err, tests) => {
+exports.list = async (req, res) => {
+  Test.find({}).exec(await (err, tests) => {
     if (err) {
       return res.send(500, err);
     }
