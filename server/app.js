@@ -13,7 +13,7 @@ const test = require('./routes/test');
 
 //https
 app.use(express.urlencoded({ extended: true }));
-//dist
+//district
 app.use(express.static(path));
 console.log(path);
 //view engine
