@@ -18,6 +18,7 @@ const test = require('./routes/test');
 app.use(express.urlencoded({ extended: true }));
 //dist
 app.use(express.static(path));
+console.log(path);
 //json
 //app.use(express.json());
 
