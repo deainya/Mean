@@ -23,6 +23,6 @@ exports.list = async (req, res) => {
       tests: tests
     });
   } catch(err) {
-    return res.send(500, err);
+    return res.status(500).send(err);
   }
 };
