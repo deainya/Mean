@@ -17,13 +17,13 @@ exports.create = async (req, res) => {
 };
 
 exports.list = async (req, res) => {
-  //try {
+  try {
     const tests = await Test.find({}).exec()
     console.log(tests);
     await res.render('testget', {
       tests: tests
     });
-  //} catch(err) {
-  //  return res.status(500).send(err);
-  //}
+  } catch(err) {
+    return res.status(500).send(err);
+  }
 };
