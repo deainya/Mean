@@ -1,39 +1,44 @@
 const config = require('./config');
 
+const mongo = require('./mongo');
 const express = require('express')
-const http = require('http')
-const path = require('path');
-
 const app = express()
 const port = config.port;
 const dist = config.dist;
-
-// default app route
-app.use(express.static(__dirname + dist));
-app.use(express.urlencoded({ extended: true }));
-//json
-//app.use(express.json());
+const path = __dirname + dist;
+//const router = express.Router();
+const test = require('./routes/test');
+//const http = require('http')
+//const path = require('path');
 
 //view engine
 //app.engine('html', require('ejs').renderFile);
 //app.set('view engine', 'html');
+//https
+app.use(express.urlencoded({ extended: true }));
+//dist
+app.use(express.static(path));
+//json
+//app.use(express.json());
 
 //main route
-app.get('/', (req, res) => {
-  res.send('Main route is ok');
-});
+//app.get('/', (req, res) => {
+//  res.send('Main route is ok');
+//});
 
 //test route
-app.get('/test', (req, res) => {
-  res.send('This is Hello World for Test!');
-});
+//app.get('/test', (req, res) => {
+//  res.send('This is Hello World for Test!');
+//});
+//alternative test route
+app.use('/test', test);
 
-//alternative
+//alternative for html
 /*app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, dist, 'index.html'));
   console.log(path.join(__dirname, dist))
-});*/
-//const server = http.createServer(app);
+});
+const server = http.createServer(app);*/
 
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`)
