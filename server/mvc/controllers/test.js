@@ -7,7 +7,7 @@ exports.index = (req, res) => {
 
 exports.create = async (req, res) => {
   var newTest = new Test(req.body);
-  console.log(req.body);
+  console.log(req.body); //trace data from post request
   try {
     await newTest.save();
     res.redirect('/test/testget');
