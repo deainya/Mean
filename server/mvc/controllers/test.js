@@ -18,12 +18,12 @@ exports.create = function (req, res) {
 };
 
 exports.list = function (req, res) {
-  Test.find({}).exec(function (err, test) {
+  Test.find({}).exec();/*(function (err, test) {
     if (err) {
       return res.send(500, err);
     }
     res.render('testget', {
       test: test
     });
-  });
+  });*/
 };
