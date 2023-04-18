@@ -19,6 +19,7 @@ exports.create = async (req, res) => {
 exports.list = async (req, res) => {
   try {
     const tests = await Test.find({}).exec()
+    console.log(tests);
     await res.render('testget', {
       tests: tests
     });
