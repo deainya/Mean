@@ -8,7 +8,7 @@ exports.index = function (req, res) {
 exports.create = async (req, res) => {
   var newTest = new Test(req.body);
   console.log(req.body);
-  newTest.save(await (res, err) => {
+  newTest.save(async (res, err) => {
     if (err) {
       res.status(400).send('Unable to save record to database');
     } else {
@@ -18,7 +18,7 @@ exports.create = async (req, res) => {
 };
 
 exports.list = async (req, res) => {
-  Test.find({}).exec(await (err, tests) => {
+  Test.find({}).exec(async (err, tests) => {
     if (err) {
       return res.send(500, err);
     }
