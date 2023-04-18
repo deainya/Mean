@@ -19,6 +19,7 @@ console.log(path);
 //view engine
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+app.set('views', path)
 //json
 //app.use(express.json());
 
