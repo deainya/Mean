@@ -2,8 +2,7 @@ const path = require('path');
 const Test = require('../models/test');
 
 exports.index = (req, res) => {
-  res.sendFile(path.resolve('../views/test.html'));
-  console.log(__dirname);
+  res.sendFile(path.resolve('server/mvc/views/test.html'));
 };
 
 exports.create = async (req, res) => {
