@@ -12,8 +12,8 @@ const test = require('./routes/test');
 //const path = require('path');
 
 //view engine
-//app.engine('html', require('ejs').renderFile);
-//app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 //https
 app.use(express.urlencoded({ extended: true }));
 //dist
