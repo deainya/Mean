@@ -1,8 +1,8 @@
-//const path = require('path');
+const path = require('path');
 const Test = require('../models/test');
 
 exports.index = (req, res) => {
-  res.sendFile('../views/test.html');
+  res.sendFile(path.resolve('../views/test.html'));
 };
 
 exports.create = async (req, res) => {
