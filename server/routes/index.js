@@ -8,7 +8,7 @@ router.use (function (req,res,next) {
 });
 
 router.get('/',function(req,res){
-  res.sendFile(path.resolve('../mvc/views/index.html'));
+  res.sendFile(path.resolve('../views/index.html'));
 });
 
 module.exports = router;

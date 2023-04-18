@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const test = require('../mvc/controllers/test');
+const test = require('../controllers/test');
 
 router.get('/', function(req, res){
   test.index(req,res);
