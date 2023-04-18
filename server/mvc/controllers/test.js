@@ -2,7 +2,7 @@ const path = require('path');
 const Test = require('../models/test');
 
 exports.index = function (req, res) {
-  res.sendFile(path.resolve('mvc/views/test.html'));
+  res.sendFile(path.resolve('server/mvc/views/test.html'));
 };
 
 exports.create = function (req, res) {
