@@ -18,8 +18,8 @@ exports.create = async (req, res) => {
 
 exports.list = async (req, res) => {
   try {
-    tests = await Test.find({}).exec()
-    res.render('testget', {
+    const tests = await Test.find({}).exec()
+    await res.render('testget', {
       tests: tests
     });
   } catch(err) {
